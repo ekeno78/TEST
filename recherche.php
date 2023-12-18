@@ -3,7 +3,7 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "didou";
 
 
 try{
@@ -16,7 +16,7 @@ catch(PDOException $e){
     echo "Erreur  : ".$e->getMessage();
 }
 
-$smtp = $bdd->prepare("SELECT * FROM poisson WHERE NomPoisson LIKE :keyword OR NomLatinPoisson LIKE :keyword  ");
+$smtp = $bdd->prepare("SELECT * FROM Poisson WHERE NomPoisson LIKE :keyword OR NomLatinPoisson LIKE :keyword  ");
 $smtp->execute(array(
     ":keyword"=>'%'.$keyword.'%'));
 $res = $smtp->fetchALl(PDO::FETCH_ASSOC);

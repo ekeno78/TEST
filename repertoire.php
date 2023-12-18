@@ -30,14 +30,14 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "didou";
 
 try{
     $bdd = new PDO("mysql:host=$servername; dbname=gotit", $username,$password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //echo "connexion réussie ☺";
 
-    $sql = "SELECT IdPoisson, NomPoisson, NomLatinPoisson, DescritptionPoisson FROM poisson";
+    $sql = "SELECT IdPoisson, NomPoisson, NomLatinPoisson, DescritptionPoisson FROM Poisson";
     $result = $bdd->query($sql);
 
     echo "<table class='table table-bordered'>";

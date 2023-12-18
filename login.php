@@ -3,12 +3,12 @@
 include 'index.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['Email_utilisateur'];
-    $password = $_POST['Password_utilisateur'];
+    $email = $_POST['EmailUtilisateur'];
+    $password = $_POST['PasswdUtilisateur'];
 
     if ($email != "" && $password != "") {
 
-        $req = $bdd->prepare("SELECT * FROM utilisateurs WHERE Email_utilisateur = ? AND Password_utilisateur = ?");
+        $req = $bdd->prepare("SELECT * FROM Utilisateur WHERE EmailUtilisateur = ? AND PasswdUtilisateur = ?");
         $req->execute([$email, $password]);
         $rep = $req->fetch(PDO::FETCH_ASSOC);
 

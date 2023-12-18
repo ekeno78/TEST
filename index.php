@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "gotit";
+$password = "didou";
 
 try{
     $bdd = new PDO("mysql:host=$servername; dbname=gotit", $username,$password);
